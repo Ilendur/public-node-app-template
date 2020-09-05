@@ -1,0 +1,12 @@
+version: '3'
+services:
+    app:
+        build: '.'
+        volumes:
+            - ./src:/app/src
+        
+    localtunnel:
+        image: 'ilendur2/localtunnel'
+        environment:
+            - LTLOCALHOST=app
+            - LTSUBDOMAIN=mysubdomain
